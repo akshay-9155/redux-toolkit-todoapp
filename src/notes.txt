@@ -1,0 +1,28 @@
+    Step 1: Create a store. src/app/source.js
+    Step 2: Create Slice. src/feartures/individualElemnt/elementSlice.js 
+        -> Define Initial State
+            const InitialState = {
+                todos: [{id: 1, text: "Hello World!"}],
+                .
+                . 
+                .
+            }
+        -> Create Slice using createSlice method.
+            const nameSlice = {
+                name: "name of slice",
+                InitialState,
+                reducers: {
+                    properties: (state, action)=>{},
+                    addTodo: (state, action)=>{
+                            State gives the current state
+                            Action gives the payload, i.e, values that may come (action.payload)
+                        }
+                }
+            }
+        -> export all the individual reducers.      export const {reducer1, reducer2, reducer3, ...} = nameSlice.actions;
+        -> export the reducer for store.        export default nameSlice.reducer
+    Step 3: Now configure the store, i.e make it aware of reducers.
+        -> Import the reducer in store.js 
+        -> const store = configureStore({
+            reducer: todoReducer
+        })
